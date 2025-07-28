@@ -14,6 +14,17 @@ public class BooleanExpression {
      * без использования конструкций if-else</p>
      */
     public boolean booleanExpression(boolean a, boolean b, boolean c, boolean d) {
-        return false;
+        int result = 0;
+        boolean[] booleans = new boolean[]{a, b, c, d};
+
+        for (boolean aBoolean : booleans) {
+            if (aBoolean) result++;
+        }
+
+        return result == 2;
     }
 }
+
+// function booleanExpression (args) {
+//  return [...args].filter(item => !!item).length === 2
+// }
