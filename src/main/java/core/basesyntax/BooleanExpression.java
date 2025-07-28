@@ -1,8 +1,5 @@
 package core.basesyntax;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class BooleanExpression {
 
     /**
@@ -17,19 +14,14 @@ public class BooleanExpression {
      * без использования конструкций if-else</p>
      */
     public boolean booleanExpression(boolean a, boolean b, boolean c, boolean d) {
-        Map<Boolean, Integer> map = new HashMap<>();
-
-        map.put(true, 0);
-        map.put(false, 0);
-
-        boolean[] booleans =  new boolean[]{a, b, c, d};
+        int result = 0;
+        boolean[] booleans = new boolean[]{a, b, c, d};
 
         for (boolean aBoolean : booleans) {
-            int quantity =  map.get(aBoolean);
-            map.put(aBoolean, ++quantity);
+            if (aBoolean) result++;
         }
 
-        return map.get(true) == 2;
+        return result == 2;
     }
 }
 
